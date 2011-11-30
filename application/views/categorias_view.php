@@ -60,7 +60,7 @@
 
 <h1>Lista de Categorias</h1>
 
-</p><input class="button" id="btn_cad" value="Cadastro"></p>
+<p><input class="button" id="btn_cad" value="Cadastro"></p>
 
 <?php echo $links; ?>
 
@@ -69,7 +69,7 @@
 <div id="sincro">
     <form action="<?php echo site_url('categorias/sincro'); ?>" method="post" id="frmsincro">
         <input type="hidden" id="inputcategoria" name="categoria" value="" />
-        <table border="1" align="center" cellpadding="5" cellspacing="0" class="ui-widget-content ui-corner-all">
+        <table class="ui-widget-content ui-corner-all">
             <tr>
                 <td><input type="checkbox" id="all" name="all" /></td>
                 <td><b>Servidores</b></td>
@@ -93,7 +93,7 @@
     <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Tem Certeza?</p>
 </div>
 
-<table border="1" align="center" cellpadding="5" cellspacing="0" class="ui-widget-content ui-corner-all">
+<table class="ui-widget-content ui-corner-all">
     <tr>
         <td align="center"><b>Nome</b></td>
         <td align="center"><b>Categoria</b></td>
