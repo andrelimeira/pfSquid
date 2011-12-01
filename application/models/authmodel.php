@@ -40,6 +40,9 @@ class authmodel extends CI_Model {
     }
 
     function changepassword() {
+        /*
+        * TODO : fazer validação de força da senha
+		*/
         // Valida o post
         if ($this->input->post('old_password') and $this->input->post('new_password') and $this->input->post('new_password2')) {
             // confere se as duas senhas estão iguais
@@ -49,19 +52,22 @@ class authmodel extends CI_Model {
                  * TODO : talvez seja mais seguro verificar no banco ao invés de session
                  * porém por session é mais rápido (teoricamente)
                  */
-                if ($this->input->post('old_password') == $this->session->userdata('password')) {
+                if (sha1($this->input->post('old_password')) == $this->session->userdata('password')) {
                     $data = array(
-                        'password' => $this->session->userdata('password')
+                        'password' => sha1($this->input->post('new_password'))
                     );
                     $this->load->database();
                     $this->db->where('username', $this->session->userdata('username'));
                     $this->db->update('auth', $data);
-
-                    $query = $this->db->get('auth');
+					return "Senha alterada com sucesso!";
+                } else {
+                	return "Senha atual n&atilde;o coincide";
                 }
+            } else {
+            	return "Novas senhas n&atilde;o coincidem";
             }
         } else {
-            return "not OK";
+            return "";
         }
     }
 
