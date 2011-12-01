@@ -16,10 +16,14 @@
 <hr>
 
 <?php if(!empty($msg)) { ?>
-<p>
-	<span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
-	<strong>Alerta:</strong><?php echo $msg; ?>
-</p>
+<div class="ui-widget">
+	<div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
+		<p>
+			<span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+			<strong>Alerta : </strong><?php echo $msg; ?>
+		</p>
+	</div>
+</div>
 <?php } ?>
 
 <form action="<?php echo site_url('auth/perfil'); ?>" method="post">
