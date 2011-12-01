@@ -17,7 +17,7 @@
 
 <h3><?php echo $msg; ?></h3>
 
-<form action="<?php site_url('auth/perfil'); ?>" method="post">
+<form action="<?php echo site_url('auth/perfil'); ?>" method="post">
     <h3>Mudar a Senha</h3>
     <p>
         Senha atual :<br />
