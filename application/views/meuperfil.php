@@ -15,7 +15,12 @@
 
 <hr>
 
-<h3><?php echo $msg; ?></h3>
+<?php if(!empty($msg)) { ?>
+<p>
+	<span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+	<strong>Alerta:</strong><?php echo $msg; ?>
+</p>
+<?php } ?>
 
 <form action="<?php echo site_url('auth/perfil'); ?>" method="post">
     <h3>Mudar a Senha</h3>
