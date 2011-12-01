@@ -21,15 +21,15 @@
     <h3>Mudar a Senha</h3>
     <p>
         Senha atual :<br />
-        <input type="text" name="old_password" size="50">
+        <input type="password" name="old_password" size="50">
     </p>
     <p>
         Nova Senha :<br />
-        <input type="text" name="new_password" size="50">
+        <input type="password" name="new_password" size="50">
     </p>
     <p>
         Repita a nova senha:<br />
-        <input type="text" name="new_password2" size="50">
+        <input type="password" name="new_password2" size="50">
     </p>
     <input type="submit" value="Mudar Senha">
 </form>
