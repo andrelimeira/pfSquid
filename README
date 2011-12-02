@@ -1,3 +1,2 @@
-pfSquid is an XMLRPC server to manage for pfSense Squid and squidGuard through a web interface. 
-The difference in pfSquid instead use the existing interface in pfsense pfSquid is that the configuration can be shared among multiple servers.
-Example: so no need to connect to multiple servers to allow or block a site
+pfSquid tem como objetivo gerenciar o Squid e squidGuard do pfSense através do XMLRPC.
+Uma das vantagens de usar o pfSquid é que a regras de acesso podem ser compartilhadas entre vários servidores.
