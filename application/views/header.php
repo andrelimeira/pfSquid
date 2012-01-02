@@ -12,7 +12,9 @@
 
 </head>
 <body>
+	
 <div align="right" style="margin:0px;padding:0px;">
     <?php echo $login; ?>
 </div>
 
+<?php echo $menu; ?>
