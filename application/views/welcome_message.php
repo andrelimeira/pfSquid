@@ -28,7 +28,7 @@
     <?php
 	foreach ($servidores as $row) {
         foreach ($row as $servidor) {
-            echo sprintf("<td><a href=\"%s/%s\"><img src=\"images/servidor.png\"><br />%s</a></td>", site_url("servidores/editar/"), $servidor->idServidor, $servidor->Observacao);
+            echo sprintf("<td><a href=\"%s/%s\"><img src=\"images/servidor.png\"><br />%s</a></td>", site_url("servidores/editar/"), $servidor->idServidor, $servidor->hostname);
         }
     }
     ?>
