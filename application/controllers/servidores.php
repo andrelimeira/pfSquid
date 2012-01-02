@@ -53,6 +53,7 @@ class Servidores extends CI_Controller {
             } else {
                 // Dados para serem gravados no banco
                 $data = array(
+                	'hostname' => $this->input->post('hostname'),
                     'URL' => $this->input->post('URL'),
                     'password' => $this->input->post('password'),
                     'Local' => $this->input->post('Local'),
@@ -92,6 +93,12 @@ class Servidores extends CI_Controller {
                 
             }
             $params['idServidor'] = $row->idServidor;
+            $params['hostname'] = array(
+                'name' => 'hostname',
+                'id' => 'hostname',
+                'value' => $row->hostname,
+                'size' => '50',
+            );
             $params['url'] = array(
                 'name' => 'URL',
                 'id' => 'URL',

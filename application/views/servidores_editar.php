@@ -20,6 +20,7 @@
         <?php
         echo form_open('servidores/atualizar');
         echo form_hidden('idServidor', $idServidor);
+        echo "<p>Hostname: <br>" . form_input($hostname) . "</p>";
         echo "<p>URL Servidor: <br>" . form_input($url) . "</p>";
         echo "<p>Senha: <br>" . form_input($password) . "</p>";
         echo "<p>Local: <br>" . form_input($local) . "</p>";

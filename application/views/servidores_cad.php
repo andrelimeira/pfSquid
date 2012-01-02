@@ -21,6 +21,8 @@
 
         <?php echo form_open('servidores/cadastro'); ?>
 
+        <p>Hostname</p>
+        <input type="text" name="hostname" value="" size="25" />
         <p>URL de acesso</p>
         <input type="text" name="URL" value="" size="50" />
         <p>Senha</p>
