@@ -5,6 +5,15 @@
         $("#btn_cad").click(function(){
             window.location="<?php echo site_url('servidores/cadastro'); ?>";
         });
+
+        $(".btn_editar").click(function(){
+            window.location=$(this).attr('id');
+        });
+
+        $(".btn_excluir").click(function(){
+        	// TODO criar código de confirmação
+        	// window.location=$(this).attr('id');
+        });
         
     });
 </script>
@@ -26,7 +35,7 @@
 
 <?php echo $links; ?>
 
-<table border="1" align="center" cellpadding="5" cellspacing="0" class="ui-widget-content ui-corner-all">
+<table class="ui-widget-content ui-corner-all">
     <tr>
         <td><b>id</b></td>
         <td><b>Status</b></td>
@@ -48,9 +57,8 @@
             <td><?php echo $row->Local; ?></td>
             <td><?php echo $row->Observacao; ?></td>
             <td>
-                <button><a href="<?php echo site_url('servidores/detalhes/' . $row->idServidor); ?>">Detalhes</a></button>
-                <button><a href="<?php echo site_url('servidores/editar/' . $row->idServidor); ?>">Editar</a></button>
-                <button><a href="<?php echo site_url('servidores/excluir/' . $row->idServidor); ?>">Excluir</a></button>
+                <button class="btn_editar" id="<?php echo site_url('servidores/editar/' . $row->idServidor); ?>">Editar</button>
+                <button class="btn_excluir" id="<?php echo site_url('servidores/excluir/' . $row->idServidor); ?>">Excluir</button>
             </td>
         </tr>
 <?php } ?>
