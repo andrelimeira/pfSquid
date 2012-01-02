@@ -41,3 +41,14 @@ code {
  margin: 14px 0 14px 0;
  padding: 12px 10px 12px 10px;
 }
+
+table {
+	font-size: 11px;
+	margin: 0 auto;
+	padding: 7px;
+}
+
+td {
+	padding: 5px;
+	border: 1px solid #D0D0D0;
+}
