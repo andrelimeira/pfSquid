@@ -74,6 +74,7 @@ CREATE TABLE IF NOT EXISTS `dominios` (
 DROP TABLE IF EXISTS `servidores`;
 CREATE TABLE IF NOT EXISTS `servidores` (
   `idServidor` int(11) NOT NULL AUTO_INCREMENT,
+  `hostname` varchar(20) NOT NULL,
   `Status` bit(1) NOT NULL,
   `URL` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
