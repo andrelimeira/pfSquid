@@ -22,3 +22,15 @@
     }
     ?>
 </table>
+<h3>Servidores</h3>
+<table border="1" cellspacing="0" cellpadding="5">
+    <tr>
+    <?php
+	foreach ($servidores as $row) {
+        foreach ($row as $servidor) {
+            echo sprintf("<td><a href=\"%s/%s\"><img src=\"images/servidor.png\"><br />%s</a></td>", site_url("servidores/editar/"), $servidor->idServidor, $servidor->Observacao);
+        }
+    }
+    ?>
+    </tr>
+</table>

@@ -9,6 +9,7 @@ class Welcome extends CI_Controller {
         if ($this->authmodel->isLogged()) {
             $this->load->model('status');
             $params['categorias'] = $this->status->Categorias();
+			$params['servidores'] = $this->status->Servidores();
             $header['login'] = $this->authmodel->link();
             $this->load->view('header', $header);
             $this->load->view('welcome_message', $params);

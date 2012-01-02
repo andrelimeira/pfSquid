@@ -27,6 +27,13 @@ class status extends CI_Model {
         return $total;
     }
 
+    function Servidores() {
+        $query = $this->db->get('servidores');
+        $total = array();
+        $total[] = $query->result();
+        return $total;
+    }
+
 }
 
 ?>
