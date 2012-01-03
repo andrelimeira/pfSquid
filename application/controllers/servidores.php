@@ -55,12 +55,16 @@ class Servidores extends CI_Controller {
 				$this -> load -> view('footer');
 			} else {
 				// Dados para serem gravados no banco
-				$data = array('hostname' => $this -> input -> post('hostname'), 'URL' => $this -> input -> post('URL'), 'password' => $this -> input -> post('password'), 'Local' => $this -> input -> post('Local'), 'Observacao' => $this -> input -> post('Observacao'));
+				$data = array(
+					'hostname' => $this -> input -> post('hostname'), 
+					'URL' => $this -> input -> post('URL'), 
+					'password' => $this -> input -> post('password'), 
+					'Local' => $this -> input -> post('Local'), 
+					'Observacao' => $this -> input -> post('Observacao')
+				);
 				// Grava no Banco de dados
 				$this -> db -> insert('servidores', $data);
 				// Atualizando o PfSense
-				// TODO implementar
-
 				redirect('servidores');
 			}
 		} else {
@@ -130,14 +134,6 @@ class Servidores extends CI_Controller {
 			$this -> db -> where('idServidor', $this -> input -> post('idServidor'));
 			$this -> db -> update('servidores', $data);
 			redirect('servidores');
-		} else {
-			redirect('auth');
-		}
-	}
-
-	function detalhes($id) {
-		if ($this -> authmodel -> isLogged()) {
-			// code goes here
 		} else {
 			redirect('auth');
 		}
