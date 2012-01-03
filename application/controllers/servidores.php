@@ -41,7 +41,7 @@ class Servidores extends CI_Controller {
 			$this -> load -> database();
 
 			// Validação do formulário
-			$this -> form_validation -> set_rules('URL', 'URL', 'required');
+			$this -> form_validation -> set_rules('IP', 'IP', 'required');
 			$this -> form_validation -> set_rules('password', 'password', 'required');
 			$this -> form_validation -> set_rules('Local', 'Local', 'required');
 			$this -> form_validation -> set_rules('Observacao', 'Observacao', 'required');
@@ -57,7 +57,7 @@ class Servidores extends CI_Controller {
 				// Dados para serem gravados no banco
 				$data = array(
 					'hostname' => $this -> input -> post('hostname'), 
-					'URL' => $this -> input -> post('URL'), 
+					'IP' => $this -> input -> post('IP'), 
 					'password' => $this -> input -> post('password'), 
 					'Local' => $this -> input -> post('Local'), 
 					'Observacao' => $this -> input -> post('Observacao')
@@ -96,7 +96,7 @@ class Servidores extends CI_Controller {
 			}
 			$params['idServidor'] = $row -> idServidor;
 			$params['hostname'] = array('name' => 'hostname', 'id' => 'hostname', 'value' => $row -> hostname, 'size' => '50', );
-			$params['url'] = array('name' => 'URL', 'id' => 'URL', 'value' => $row -> URL, 'size' => '50', );
+			$params['IP'] = array('name' => 'IP', 'id' => 'IP', 'value' => $row -> IP, 'size' => '15', );
 			$params['password'] = array('name' => 'password', 'id' => 'password', 'value' => $row -> password, 'size' => '50', );
 			$params['local'] = array('name' => 'Local', 'id' => 'Local', 'value' => $row -> Local, 'size' => '50', );
 			$params['observacao'] = array('name' => 'Observacao', 'id' => 'Observacao', 'value' => $row -> Observacao, 'size' => '50', );
@@ -123,7 +123,7 @@ class Servidores extends CI_Controller {
 
 			// Validação do formulário
 			$this -> form_validation -> set_rules('idServidor', 'idServidor', 'required');
-			$this -> form_validation -> set_rules('URL', 'URL', 'required');
+			$this -> form_validation -> set_rules('IP', 'IP', 'required');
 			$this -> form_validation -> set_rules('password', 'password', 'required');
 			$this -> form_validation -> set_rules('Local', 'Local', 'required');
 			$this -> form_validation -> set_rules('Observacao', 'Observacao', 'required');

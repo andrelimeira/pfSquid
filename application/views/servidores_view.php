@@ -30,7 +30,7 @@
     <tr>
         <td><b>id</b></td>
         <td><b>Status</b></td>
-        <td><b>URL</b></td>
+        <td><b>IP</b></td>
         <td><b>Local</b></td>
         <td><b>Observação</b></td>
         <td><b>Ações</b></td>
@@ -44,7 +44,7 @@
         } else {
             echo "Desativado";
         } ?></td>
-            <td><?php echo $row->URL; ?></td>
+            <td><?php echo $row->IP; ?></td>
             <td><?php echo $row->Local; ?></td>
             <td><?php echo $row->Observacao; ?></td>
             <td>

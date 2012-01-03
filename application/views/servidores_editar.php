@@ -12,8 +12,8 @@
         echo form_open('servidores/atualizar');
         echo form_hidden('idServidor', $idServidor);
         echo "<p>Hostname: <br>" . form_input($hostname) . "</p>";
-        echo "<p>URL Servidor: <br>" . form_input($url) . "</p>";
-        echo "<p>Senha: <br>" . form_input($password) . "</p>";
+        echo "<p>IP: <br>" . form_input($IP) . "</p>";
+        echo "<p>Senha: <br>" . form_password($password) . "</p>";
         echo "<p>Local: <br>" . form_input($local) . "</p>";
         echo "<p>Observação: <br>" . form_input($observacao) . "</p>";
         // TODO colocar javascript para mudar descrição qdo for clicado o Status

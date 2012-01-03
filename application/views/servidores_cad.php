@@ -15,7 +15,7 @@
         <p>Hostname</p>
         <input type="text" name="hostname" value="" size="25" />
         <p>URL de acesso</p>
-        <input type="text" name="URL" value="" size="50" />
+        <input type="text" name="IP" value="" size="15" />
         <p>Senha</p>
         <input type="password" name="password" value="" size="50" />
         <p>Localização</p>
