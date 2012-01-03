@@ -18,7 +18,14 @@
         echo "<p>Local: <br>" . form_input($local) . "</p>";
         echo "<p>Observação: <br>" . form_input($observacao) . "</p>";
         // TODO colocar javascript para mudar descrição qdo for clicado o Status
-        echo "<p>Status: <br>" . form_checkbox($status) . $status_label;
+         echo "<p>Status: " . form_checkbox($status);
+		if($status['value'] == 1) {
+			// se está ativo
+			 echo "<small>(Ativado)</small>";
+		} else {
+			// senão
+			echo "<small>(Desativado)</small>";
+		}
         ?>
         <p>
             <button type="submit" value="mysubmit">Atualizar</button>
