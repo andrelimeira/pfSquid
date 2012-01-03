@@ -134,7 +134,7 @@ class Servidores extends CI_Controller {
 			$this -> form_validation -> set_rules('Status', 'Status', 'required');
 
 			$data = array(
-				'URL' => $this -> input -> post('URL'), 
+				'IP' => $this -> input -> post('IP'), 
 				'username' => $this -> input -> post('username'),
 				'password' => $this -> input -> post('password'), 
 				'Local' => $this -> input -> post('Local'), 
