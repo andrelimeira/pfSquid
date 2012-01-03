@@ -13,6 +13,7 @@
         echo form_hidden('idServidor', $idServidor);
         echo "<p>Hostname: <br>" . form_input($hostname) . "</p>";
         echo "<p>IP: <br>" . form_input($IP) . "</p>";
+		echo "<p>Nome de Usuário: <br>" . form_input($username) . "</p>";
         echo "<p>Senha: <br>" . form_password($password) . "</p>";
         echo "<p>Local: <br>" . form_input($local) . "</p>";
         echo "<p>Observação: <br>" . form_input($observacao) . "</p>";

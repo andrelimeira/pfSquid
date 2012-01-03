@@ -16,6 +16,8 @@
         <input type="text" name="hostname" value="" size="25" />
         <p>URL de acesso</p>
         <input type="text" name="IP" value="" size="15" />
+        <p>Nome de Usuário</p>
+        <input type="text" name="username" value="" size="50" />
         <p>Senha</p>
         <input type="password" name="password" value="" size="50" />
         <p>Localização</p>
