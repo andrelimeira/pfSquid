@@ -42,6 +42,7 @@ class Servidores extends CI_Controller {
 
 			// Validação do formulário
 			$this -> form_validation -> set_rules('IP', 'IP', 'required');
+			$this -> form_validation -> set_rules('username', 'username', 'required');
 			$this -> form_validation -> set_rules('password', 'password', 'required');
 			$this -> form_validation -> set_rules('Local', 'Local', 'required');
 			$this -> form_validation -> set_rules('Observacao', 'Observacao', 'required');
@@ -58,6 +59,7 @@ class Servidores extends CI_Controller {
 				$data = array(
 					'hostname' => $this -> input -> post('hostname'), 
 					'IP' => $this -> input -> post('IP'), 
+					'username' => $this -> input -> post('username'),
 					'password' => $this -> input -> post('password'), 
 					'Local' => $this -> input -> post('Local'), 
 					'Observacao' => $this -> input -> post('Observacao')
@@ -97,6 +99,7 @@ class Servidores extends CI_Controller {
 			$params['idServidor'] = $row -> idServidor;
 			$params['hostname'] = array('name' => 'hostname', 'id' => 'hostname', 'value' => $row -> hostname, 'size' => '50', );
 			$params['IP'] = array('name' => 'IP', 'id' => 'IP', 'value' => $row -> IP, 'size' => '15', );
+			$params['username'] = array('name' => 'username', 'id' => 'username', 'value' => $row -> username, 'size' => '50', );
 			$params['password'] = array('name' => 'password', 'id' => 'password', 'value' => $row -> password, 'size' => '50', );
 			$params['local'] = array('name' => 'Local', 'id' => 'Local', 'value' => $row -> Local, 'size' => '50', );
 			$params['observacao'] = array('name' => 'Observacao', 'id' => 'Observacao', 'value' => $row -> Observacao, 'size' => '50', );
@@ -124,12 +127,20 @@ class Servidores extends CI_Controller {
 			// Validação do formulário
 			$this -> form_validation -> set_rules('idServidor', 'idServidor', 'required');
 			$this -> form_validation -> set_rules('IP', 'IP', 'required');
+			$this -> form_validation -> set_rules('username', 'username', 'required');
 			$this -> form_validation -> set_rules('password', 'password', 'required');
 			$this -> form_validation -> set_rules('Local', 'Local', 'required');
 			$this -> form_validation -> set_rules('Observacao', 'Observacao', 'required');
 			$this -> form_validation -> set_rules('Status', 'Status', 'required');
 
-			$data = array('URL' => $this -> input -> post('URL'), 'password' => $this -> input -> post('password'), 'Local' => $this -> input -> post('Local'), 'Observacao' => $this -> input -> post('Observacao'), 'Status' => $this -> input -> post('Status'));
+			$data = array(
+				'URL' => $this -> input -> post('URL'), 
+				'username' => $this -> input -> post('username'),
+				'password' => $this -> input -> post('password'), 
+				'Local' => $this -> input -> post('Local'), 
+				'Observacao' => $this -> input -> post('Observacao'), 
+				'Status' => $this -> input -> post('Status')
+			);
 
 			$this -> db -> where('idServidor', $this -> input -> post('idServidor'));
 			$this -> db -> update('servidores', $data);
