@@ -42,6 +42,7 @@ class Auth extends CI_Controller {
 
 			// menu login
 			$header['login'] = $this -> authmodel -> link();
+			$header['menu'] = $this -> modulos -> menu();
 
 			// dados do usuário
 			$params['username'] = $this -> session -> userdata('username');
