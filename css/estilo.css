@@ -16,6 +16,9 @@ a:link {
 a:hover {
 	font-weight: bold;
 }
+p {
+	font-size:11px;
+}
 h1 {
 	color: #444;
 	background-color: transparent;
