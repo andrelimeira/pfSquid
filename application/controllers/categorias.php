@@ -24,7 +24,8 @@ class Categorias extends CI_Controller {
 			$query = $this -> db -> get('categorias');
 			// repassa para a página,...
 			$params['Categorias'] = $query -> result();
-			// obtêm a lista de servidores do banco de dados
+			// obtêm a lista de servidores ativos do banco de dados
+			$this -> db -> where('status', true);
 			$query = $this -> db -> get('servidores');
 			// repassa para a página,...
 			$params['servidores'] = $query -> result();
