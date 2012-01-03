@@ -104,11 +104,6 @@ class Servidores extends CI_Controller {
 			$params['local'] = array('name' => 'Local', 'id' => 'Local', 'value' => $row -> Local, 'size' => '50', );
 			$params['observacao'] = array('name' => 'Observacao', 'id' => 'Observacao', 'value' => $row -> Observacao, 'size' => '50', );
 			$params['status'] = array('name' => 'Status', 'id' => 'Status', 'value' => $row -> Status, 'checked' => $row -> Status, );
-			if ($row -> Status) {
-				$params['status_label'] = "Ativo</p>";
-			} else {
-				$params['status_label'] = "Desativado</p>";
-			}
 			$header['login'] = $this -> authmodel -> link();
 			$header['menu'] = $this -> modulos -> menu();
 			$this -> load -> view('header', $header);
