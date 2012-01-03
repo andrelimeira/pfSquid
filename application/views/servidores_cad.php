@@ -25,8 +25,8 @@
         <p>Observação</p>
         <input type="text" name="Observacao" value="" size="50" />
         <p>
-            <button type="submit" value="Enviar">Enviar</button>
-            <button type="reset" value="Limpar">Limpar Campos</button>
+            <button type="submit">Enviar</button>
+            <button type="reset">Limpar Campos</button>
         </p>
 
         <?php echo form_close(); ?>
