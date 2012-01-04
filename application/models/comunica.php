@@ -14,7 +14,7 @@ class comunica extends CI_Model {
 		$query = $this -> db -> get('servidores');
 		foreach ($query->result() as $servidores) {
 			$URL = sprintf("http://%s/squidrpc.php", $servidores -> IP);
-			$this -> xmlrpc -> server(URL, 80);
+			$this -> xmlrpc -> server($URL, $servidores -> Port);
 			$this -> xmlrpc -> method('pfsense.allow_site');
 			$request = array($servidores -> password, $dominio, $categoria);
 			$this -> xmlrpc -> request($request);
@@ -47,7 +47,7 @@ class comunica extends CI_Model {
 		$this -> load -> library('xmlrpc');
 		foreach ($qserver->result() as $servidor) {
 			$URL = sprintf("http://%s/squidrpc.php", $servidores -> IP);
-			$this -> xmlrpc -> server($URL, 80);
+			$this -> xmlrpc -> server($URL, $servidores -> Port);
 			$this -> xmlrpc -> method('pfsense.sendCategoriaDomain');
 			$request = array($servidor -> password, $dominios, $categoria);
 			$this -> xmlrpc -> request($request);
