@@ -17,7 +17,7 @@ a:hover {
 	color: black;
 }
 p {
-	font-size:11px;
+	font-size: 11px;
 }
 h1 {
 	color: #444;
@@ -47,7 +47,6 @@ td {
 	padding: 5px;
 	border: 1px solid #D0D0D0;
 }
-
 #menu a:link, a:visited {
 	font-weight: bold;
 	text-decoration: none;
