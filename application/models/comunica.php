@@ -37,13 +37,14 @@ class comunica extends CI_Model {
 		$dominios = '';
 		foreach ($query->result() as $dominio) {
 			if (empty($dominios)) {
-				$dominios = $dominio -> Dominio;
+				$dominios = rtrim(ltrim($dominio -> Dominio));
 			} else {
-				$dominios .= " " . $dominio -> Dominio;
+				$dominios .= " " . rtrim(ltrim($dominio -> Dominio));
 			}
+			var_dump($dominios);
 		}
 		// Conecta no servidor
-
+		
 		$this -> load -> library('xmlrpc');
 		foreach ($qserver->result() as $servidor) {
 			$URL = sprintf("http://%s/squidrpc.php", $servidor -> IP);
