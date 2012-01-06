@@ -33,7 +33,7 @@ if (defined('ENVIRONMENT'))
 	switch (ENVIRONMENT)
 	{
 		case 'development':
-			error_reporting(-1);
+			error_reporting(E_ALL);
 		break;
 	
 		case 'testing':
@@ -73,23 +73,6 @@ if (defined('ENVIRONMENT'))
  *
  */
 	$application_folder = 'application';
-		
-/*
- *---------------------------------------------------------------
- * VIEW FOLDER NAME
- *---------------------------------------------------------------
- * 
- * If you want to move the view folder out of the application 
- * folder set the path to the folder here. The folder can be renamed
- * and relocated anywhere on your server. If blank, it will default 
- * to the standard location inside your application folder.  If you 
- * do move this, use the full server path to this folder 
- *
- * NO TRAILING SLASH!
- *
- */
-	$view_folder = '';	
-
 
 /*
  * --------------------------------------------------------------------
@@ -207,22 +190,6 @@ if (defined('ENVIRONMENT'))
 
 		define('APPPATH', BASEPATH.$application_folder.'/');
 	}
-	
-	// The path to the "views" folder
-	if (is_dir($view_folder)) 
-	{
-		define ('VIEWPATH', $view_folder .'/');
-	}
-	else 
-	{
-		if ( ! is_dir(APPPATH.'views/'))
-		{
-			exit("Your view folder path does not appear to be set correctly. Please open the following file and correct this: ".SELF);
-		}
-				
-		define ('VIEWPATH', APPPATH.'views/' );	
-	}
-	
 
 /*
  * --------------------------------------------------------------------

@@ -127,7 +127,7 @@ class CI_Loader {
 		$this->_ci_library_paths = array(APPPATH, BASEPATH);
 		$this->_ci_helper_paths = array(APPPATH, BASEPATH);
 		$this->_ci_model_paths = array(APPPATH);
-		$this->_ci_view_paths = array(VIEWPATH	=> TRUE);
+		$this->_ci_view_paths = array(APPPATH.'views/'	=> TRUE);
 
 		log_message('debug', "Loader Class Initialized");
 	}
@@ -614,6 +614,11 @@ class CI_Loader {
 		{
 			// we aren't instantiating an object here, that'll be done by the Library itself
 			require BASEPATH.'libraries/Driver.php';
+		}
+
+		if ($library == '')
+		{
+			return FALSE;
 		}
 
 		// We can save the loader some time since Drivers will *always* be in a subfolder,
@@ -1106,7 +1111,7 @@ class CI_Loader {
 	 * @param	array
 	 * @return	void
 	 */
-	protected function _ci_autoloader()
+	private function _ci_autoloader()
 	{
 		if (defined('ENVIRONMENT') AND file_exists(APPPATH.'config/'.ENVIRONMENT.'/autoload.php'))
 		{

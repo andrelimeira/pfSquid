@@ -642,8 +642,11 @@ if ( ! function_exists('form_prep'))
 		{
 			return $str;
 		}
-		
-		$str = html_escape($str);
+
+		$str = htmlspecialchars($str);
+
+		// In case htmlspecialchars misses these.
+		$str = str_replace(array("'", '"'), array("&#39;", "&quot;"), $str);
 
 		if ($field_name != '')
 		{

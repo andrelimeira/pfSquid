@@ -175,7 +175,7 @@ class CI_URI {
 	 * @access	private
 	 * @return	string
 	 */
-	protected function _detect_uri()
+	private function _detect_uri()
 	{
 		if ( ! isset($_SERVER['REQUEST_URI']) OR ! isset($_SERVER['SCRIPT_NAME']))
 		{
@@ -232,7 +232,7 @@ class CI_URI {
 	 * @access	private
 	 * @return	string
 	 */
-	protected function _parse_cli_args()
+	private function _parse_cli_args()
 	{
 		$args = array_slice($_SERVER['argv'], 1);
 
