@@ -41,7 +41,6 @@ class comunica extends CI_Model {
 			} else {
 				$dominios .= " " . rtrim(ltrim($dominio -> Dominio));
 			}
-			var_dump($dominios);
 		}
 		// Conecta no servidor
 		
