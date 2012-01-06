@@ -71,7 +71,8 @@ class Domain extends CI_Controller {
 				$this -> load -> view('footer');
 			} else {
 				// Dados para serem gravados no banco
-				$data = array('Dominio' => $this -> input -> post('Dominio'), 'NameCategoria' => $this -> input -> post('NameCategoria'));
+				// rtrim, ltrim, limpando espaços vazios antes e depois da string
+				$data = array('Dominio' => rtrim(ltrim($this -> input -> post('Dominio'))), 'NameCategoria' => $this -> input -> post('NameCategoria'));
 				// Grava no Banco de dados
 				$this -> db -> insert('dominios', $data);
 				if ($this -> input -> post('sincro') == 1) {
